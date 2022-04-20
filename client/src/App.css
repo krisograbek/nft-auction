@@ -4,7 +4,7 @@
   text-align: right;
 }
 
-button {
+.button-header {
   cursor: pointer;
   border: none;
   border-radius: 24px;
@@ -23,4 +23,42 @@ button {
 
 .disconnect {
   background-color: #ba000d;
+}
+
+.bidContainer {
+  margin: 20px;
+  padding: 50px;
+  /* display: flex; */
+  text-align: center;
+  background-color: #ddd;
+}
+
+.bidPanel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bidImage {
+  flex: 2 0 0;
+  /* background: #f00; */
+  padding: 20px;
+}
+
+.bidDetails {
+  flex: 3 0 0;
+  /* background: #0d0; */
+  padding: 20px;
+}
+
+.flexBasic {
+  display: flex;
+}
+
+.flexItem {
+  flex: 1;
+}
+
+.flexGrow {
+  flex: 1;
 }
