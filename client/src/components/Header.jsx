@@ -5,10 +5,10 @@ import { useBid } from '../utils/hooks';
 import { formatEther } from 'ethers/lib/utils';
 
 const Header = () => {
-  const { activateBrowserWallet, deactivate, account } = useEthers();
+  const { activateBrowserWallet, deactivate, account, chainId } = useEthers();
   const { auctionInterface } = useBid();
-  const accountBalance = useEtherBalance(account);
-  console.log('in Header', auctionInterface);
+  const accountBalance = useEtherBalance(account, { chainId });
+  console.log('balance', accountBalance);
   return (
     <div>
       {!account ? (
@@ -20,7 +20,10 @@ const Header = () => {
           <h2>
             {`Connected Wallet: ${shortenAddress(account)}`}
             <br />
-            {`Your Balance: ${formatEther(accountBalance)} Eth`}
+            {/* sub and mod are there to display 5 decimals */}
+            {/* if you want the full number use the following line */}
+            {/* {`Your Balance: ${accountBalance && formatEther(accountBalance)} Eth`} */}
+            {`Your Balance: ${accountBalance && formatEther(accountBalance.sub(accountBalance.mod(1e13)))} Eth`}
           </h2>
         )
       }
