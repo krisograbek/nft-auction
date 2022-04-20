@@ -1,0 +1,1 @@
+export const shortenAddress = (addr) => `${addr.slice(0, 5)}...${addr.slice(-4)}`;
