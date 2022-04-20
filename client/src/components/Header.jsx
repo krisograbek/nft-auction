@@ -1,9 +1,12 @@
 import React from 'react'
 import { useEthers } from '@usedapp/core';
 import { shortenAddress } from '../utils/helpers';
+import { useBid } from '../utils/hooks';
 
 const Header = () => {
   const { activateBrowserWallet, deactivate, account } = useEthers();
+  const { auctionInterface } = useBid();
+  console.log('in Header', auctionInterface);
   return (
     <div>
       <h2>
