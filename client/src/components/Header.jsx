@@ -28,11 +28,11 @@ const Header = () => {
         )
       }
       {!account ? (
-        <button className="connect" onClick={() => activateBrowserWallet()}>
+        <button className="button-header connect" onClick={() => activateBrowserWallet()}>
           Connect
         </button>
       ) : (
-        <button className="disconnect" onClick={() => deactivate()}>
+        <button className="button-header disconnect" onClick={() => deactivate()}>
           Disconnect
         </button>
       )}
